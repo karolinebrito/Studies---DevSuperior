@@ -1,0 +1,27 @@
+package main;
+
+import java.util.Scanner;
+import java.util.stream.DoubleStream;
+
+public class Exercises_Topic03_Aula15 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Number of values: ");
+		int number = sc.nextInt();
+		
+		double vector[] = new double[number];
+		
+		for (int i=0;i<number;i++) {
+			vector[i] = sc.nextDouble();			
+		}
+		
+		System.out.printf("SUM = ", DoubleStream.of(vector).sum());
+		
+		sc.close();
+
+	}
+
+}
