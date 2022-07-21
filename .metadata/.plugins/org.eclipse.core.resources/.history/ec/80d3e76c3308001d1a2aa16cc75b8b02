@@ -1,0 +1,29 @@
+package main;
+
+import java.util.Scanner;
+
+
+public class Exercises_Topic03_Aula20 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		double a, b, c;
+		
+		System.out.println("a = ");
+		a = sc.nextDouble();
+		System.out.println("b = ");
+		b = sc.nextDouble();
+		System.out.println("c = ");
+		c = sc.nextDouble();
+		
+		sc.nextLine();
+		
+		System.out.println("Area of a Square = " + Math.pow(a, 2));
+		
+		
+		sc.close();
+
+	}
+
+}

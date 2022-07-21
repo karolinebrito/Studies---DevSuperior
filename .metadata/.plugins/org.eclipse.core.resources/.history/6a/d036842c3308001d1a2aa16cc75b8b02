@@ -1,0 +1,19 @@
+package main;
+
+import java.util.Scanner;
+
+public class Exercises_Topic03_Aula20 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		Exercises_Topic03_Aula20 areas;
+		areas = new Exercises_Topic03_Aula20();
+		
+		Exercises_Topic03_Aula20.
+		
+		sc.close();
+
+	}
+
+}
