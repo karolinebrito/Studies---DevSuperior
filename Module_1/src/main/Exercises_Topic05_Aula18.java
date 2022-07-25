@@ -2,8 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-public class Exercises_Topic05_Aula18 {
-
+public class  Exercises_Topic05_Aula18{
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
