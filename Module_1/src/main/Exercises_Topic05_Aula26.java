@@ -21,10 +21,10 @@ public class Exercises_Topic05_Aula26 {
 		double sumWomen = 0;
 		double sumHeightWomen = 0;
 		
-		for (int i=0; i<=2; ++i) {			
+		for (int i=0; i<n; ++i) {			
 			System.out.println("Athlete #" + (i+1) + ": ");
 			System.out.print("Name: ");
-			name[i] = sc.nextLine();
+			name[i] = sc.next();
 			sc.nextLine();
 			System.out.print("Gender (F/M): ");
 			gender[i] = sc.next();
@@ -61,15 +61,15 @@ public class Exercises_Topic05_Aula26 {
 				
 			}
 			totalWeight += weight[i];
-			if (gender[i] == "M") {
+			if (gender[i].equals("M")) {
 				sumMen += 1;
 			}
 			else {
 				
 			}
-			if (gender[i] == "F") {
+			if (gender[i].equals("F")) {
 				sumWomen += 1;
-				sumHeightWomen = height[i];
+				sumHeightWomen += height[i];
 			}
 			else {
 				
@@ -77,10 +77,18 @@ public class Exercises_Topic05_Aula26 {
 		}
 		
 		System.out.println("Average weight: " + String.format("%.2f", totalWeight/weight.length));
-		Arrays.sort(height);
-		System.out.printf("Highest athlete: ", height[height.length]);
-		System.out.printf("Percentage of men: ", sumMen/gender.length);
-		System.out.printf("Percentage of men: ", sumHeightWomen/sumWomen);
+		double tempHeight[] = Arrays.copyOf(height, n);
+		Arrays.sort(tempHeight);
+		double value = tempHeight[tempHeight.length-1];
+		double index = Arrays.asList(tempHeight).indexOf(value);
+		System.out.println("Highest man: " + name[(int) index]);
+		System.out.println("Percentage of men: " + (sumMen/gender.length)*100 + "%");
+		if (sumWomen==0) {
+			System.out.println("There is no female data to show.");
+		}
+		else {
+			System.out.printf("Average high of women: %.2f\n", sumHeightWomen/sumWomen);
+		}
 		
 		sc.close();
 
