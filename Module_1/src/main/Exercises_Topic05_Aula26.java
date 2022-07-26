@@ -80,8 +80,8 @@ public class Exercises_Topic05_Aula26 {
 		double tempHeight[] = Arrays.copyOf(height, n);
 		Arrays.sort(tempHeight);
 		double value = tempHeight[tempHeight.length-1];
-		double index = Arrays.asList(tempHeight).indexOf(value);
-		System.out.println("Highest man: " + name[(int) index]);
+		int index = Arrays.asList(height).indexOf(value);
+		System.out.println("Highest man: " + name[index]);
 		System.out.println("Percentage of men: " + (sumMen/gender.length)*100 + "%");
 		if (sumWomen==0) {
 			System.out.println("There is no female data to show.");
