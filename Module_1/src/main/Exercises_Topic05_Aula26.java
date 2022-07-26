@@ -1,7 +1,10 @@
 package main;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 public class Exercises_Topic05_Aula26 {
 
@@ -21,10 +24,11 @@ public class Exercises_Topic05_Aula26 {
 		double sumWomen = 0;
 		double sumHeightWomen = 0;
 		
-		for (int i=0; i<n; ++i) {			
+		for (int i=0; i<n; ++i) {
+			System.out.println("");
 			System.out.println("Athlete #" + (i+1) + ": ");
 			System.out.print("Name: ");
-			name[i] = sc.next();
+			name[i] = sc.next() + " " + sc.next();
 			sc.nextLine();
 			System.out.print("Gender (F/M): ");
 			gender[i] = sc.next();
@@ -75,14 +79,15 @@ public class Exercises_Topic05_Aula26 {
 				
 			}			
 		}
-		
+		System.out.println("");
 		System.out.println("Average weight: " + String.format("%.2f", totalWeight/weight.length));
 		double tempHeight[] = Arrays.copyOf(height, n);
 		Arrays.sort(tempHeight);
 		double value = tempHeight[tempHeight.length-1];
-		int index = Arrays.asList(height).indexOf(value);
-		System.out.println("Highest man: " + name[index]);
-		System.out.println("Percentage of men: " + (sumMen/gender.length)*100 + "%");
+		List<Double> list = DoubleStream.of(height).boxed().collect(Collectors.toList());
+		int index = list.indexOf(value);
+		System.out.println("Highest athlete: " + name[index]);
+		System.out.println("Percentage of men: " + String.format("%.2f", (sumMen/gender.length)*100) + "%");
 		if (sumWomen==0) {
 			System.out.println("There is no female data to show.");
 		}
