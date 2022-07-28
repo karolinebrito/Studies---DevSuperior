@@ -1,6 +1,5 @@
 package main;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercises_Topic06_Aula17 {
@@ -34,9 +33,7 @@ public class Exercises_Topic06_Aula17 {
 			if (average[i]>=6) {
 				System.out.println(name[i]);
 			}
-		}
-		
-		
+		}		
 		
 		sc.close();
 
